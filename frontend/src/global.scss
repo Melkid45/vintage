@@ -1,0 +1,23 @@
+@use './assets/_styles/reset';
+@use './assets/_styles/variables';
+@use './assets/_styles/typography';
+@use './assets/_styles/button';
+@use './assets/_styles/block';
+
+html {
+  min-width: 320px;
+  background: var(--color-white);
+}
+
+body {
+  min-width: 320px;
+  max-width: 1920px;
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+  background: var(--color-white);
+  color: var(--color-black);
+}
+.container{
+    padding: 0 100px;
+    width: 100%;
+}

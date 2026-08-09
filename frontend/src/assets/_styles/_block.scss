@@ -1,0 +1,30 @@
+.block{
+    width: 100%;
+    padding: 100px 0px;
+    &--hero{
+        padding-top: 108px;
+    }
+    &--small{
+        padding: 32px 0px;
+    }
+    &--bottom{
+        padding: 0px 0px 100px;
+    }
+    &--top{
+        padding: 100px 0px 0px;
+    }
+    &--none{
+        padding: 0;
+    }
+    &--first{
+        padding: 48px 0 100px;
+        &-top{
+            padding: 48px 0 0;
+        }
+    }
+}
+.block__title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

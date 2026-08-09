@@ -1,0 +1,102 @@
+<link rel="stylesheet" href="./auth.scss">
+
+
+<section class="auth">
+    <div class="auth__body">
+        <div class="auth__body-title">
+            <h2 class="text text--xl text--semi current">
+                РЕГИСТРАЦИЯ
+            </h2>
+            <h2 class="text text--xl text--semi">
+                ВХОД
+            </h2>
+        </div>
+        <button class="auth--close">
+            <i data-lucide="X"></i>
+        </button>
+        <div class="auth__body-forms">
+            <form action="" class="form register current">
+                <div class="form__inputs">
+                    <div class="form__input">
+                        <label class="text text--xs text--medium" for="surname">
+                            Имя *
+                        </label>
+                        <input class="text text--sm text--medium" type="text" name="name" placeholder="Алексей">
+                    </div>
+                    <div class="form__input">
+                        <label class="text text--xs text--medium" for="surname">
+                            Фамилия *
+                        </label>
+                        <input class="text text--sm text--medium" type="text" name="surname" placeholder="Смирнов">
+                    </div>
+                    <div class="form__input">
+                        <label class="text text--xs text--medium" for="phone">
+                            Номер телефона *
+                        </label>
+                        <input class="text text--sm text--medium" type="tel" name="phone"
+                            placeholder="+7 (___)-___-__-__">
+                    </div>
+                    <div class="form__input">
+                        <label class="text text--xs text--medium" for="email">
+                            E-mail *
+                        </label>
+                        <input class="text text--sm text--medium" type="email" name="email"
+                            placeholder="Впишите свой e-mail">
+                    </div>
+                    <div class="form__input">
+                        <label class="text text--xs text--medium" for="password">
+                            Введите пароль *
+                        </label>
+                        <input class="text text--sm text--medium" type="password" name="password" placeholder="******">
+                    </div>
+                    <div class="form__input">
+                        <label class="text text--xs text--medium" for="confirm__password">
+                            Повторите пароль *
+                        </label>
+                        <input class="text text--sm text--medium" type="password" name="confirm__password"
+                            placeholder="******">
+                    </div>
+                </div>
+                <div class="form__actions">
+                    <button class="button button--black button--large text text--md text--medium">
+                        ЗАРЕГИСТРИРОВАТЬСЯ
+                    </button>
+                    <div class="form__actions-checkbox">
+                        <div>
+                            <input type="checkbox" name="policy">
+                        </div>
+                        <p class="text text--sm text--medium">
+                            Нажимая кнопку, вы принимаете условия <a href="">публичной <br>
+                            оферты</a> и <a href="">политики конфиденциальности</a> .
+                        </p>
+                    </div>
+                </div>
+            </form>
+            <form action="" class="form login">
+                <div class="form__inputs">
+                    <div class="form__input">
+                        <label class="text text--xs text--medium" for="email">
+                            E-mail *
+                        </label>
+                        <input class="text text--sm text--medium" type="email" name="email"
+                            placeholder="Впишите свой e-mail">
+                    </div>
+                    <div class="form__input">
+                        <label class="text text--xs text--medium" for="password">
+                            Введите пароль *
+                        </label>
+                        <input class="text text--sm text--medium" type="password" name="password" placeholder="******">
+                    </div>
+                </div>
+                <div class="form__actions">
+                    <button class="button button--black button--large text text--md text--medium">
+                        ВОЙТИ
+                    </button>
+                    <a class="text text--xs text--medium" href="">
+                        Забыли пароль?
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

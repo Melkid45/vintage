@@ -1,0 +1,42 @@
+.about{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    &__information{
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        p{
+            padding: 24px;
+            color: #1E1E1E99;
+        }
+    }
+    &__reel{
+        width: 100%;
+        position: relative;
+        display: flex;
+        img{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        button{
+            width: 48px;
+            height: 48px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            svg{
+                height: 24px;
+                width: auto;
+                color: var(--color-white);
+            }
+        }
+    }
+}

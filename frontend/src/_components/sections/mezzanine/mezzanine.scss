@@ -1,0 +1,56 @@
+.block--mezzanine{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+.mezzanine{
+    width: 100%;
+    aspect-ratio: 3/1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    justify-content: center;
+    img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 0;
+        inset: 0;
+        object-fit: cover;
+    }
+    h1{
+        color: var(--color-white);
+        z-index: 1;
+    }
+    span{
+        opacity: .6;
+        color: var(--color-white);
+        z-index: 1;
+        text-transform: uppercase;
+    }
+}
+.mezzanine__information{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+    .description{
+        line-height: 1.3;
+        opacity: .6;
+    }
+    &-items{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 100px;
+        padding: 0 48px;
+        .mezzanine__item{
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            p{
+                opacity: .6;
+            }
+        }
+    }
+}

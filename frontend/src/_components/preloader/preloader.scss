@@ -1,0 +1,67 @@
+html.is-preloading,
+html.is-preloading body {
+    overflow: hidden;
+}
+
+html.preloader-skip .preloader {
+    display: none;
+}
+
+.preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100svh;
+    overflow: hidden;
+    background: var(--color-white);
+    clip-path: inset(0 0 0 0);
+    isolation: isolate;
+
+    &__content {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(16px, 3vw, 48px);
+    }
+
+    &__title {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 0;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    &__word {
+        display: block;
+        flex: 0 0 auto;
+        opacity: 0;
+        white-space: nowrap;
+        will-change: opacity, transform;
+    }
+
+    &__circle-origin {
+        width: clamp(8px, 2.1132vw, 40.574px);
+        height: clamp(8px, 2.1132vw, 40.574px);
+        flex: 0 0 auto;
+        margin-right: clamp(2px, .625vw, 12px);
+        margin-left: clamp(4px, 1.147vw, 22px);
+        visibility: hidden;
+    }
+
+    &__circle {
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        display: block;
+        background: var(--color-accent);
+        clip-path: circle(0 at 50% calc(100% - 32px));
+        opacity: 0;
+        will-change: opacity, clip-path;
+    }
+}

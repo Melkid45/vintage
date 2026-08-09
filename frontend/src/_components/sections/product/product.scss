@@ -1,0 +1,197 @@
+.product {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+
+    &__gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+
+        .gallery__item {
+            grid-column: span 2;
+            aspect-ratio: 1/1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &-background {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            &-product {
+                width: 100%;
+                height: 100%;
+                max-width: 80%;
+                max-height: 80%;
+                object-fit: contain;
+                z-index: 1;
+            }
+        }
+
+        &-place {
+            grid-column: span 2;
+            padding: 24px;
+            border: 1px solid #1E1E1E99;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            .place__text {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                &-time {
+                    display: flex;
+                    align-items: center;
+                    gap: 42px;
+
+                    span {
+                        opacity: .6;
+                    }
+                }
+
+                p {
+                    color: #139222;
+                }
+            }
+        }
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        position: sticky;
+        top: 108px;
+        right: 0;
+        max-height: max-content;
+        &-information {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            padding: 0 24px;
+
+            .information__product {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+
+                span {
+                    padding: 10px 16px;
+                    background: var(--color-accent);
+                    color: var(--color-white);
+                    max-width: max-content;
+                }
+            }
+
+            .information__price {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+
+                &:has(span) {
+                    color: var(--color-accent);
+                }
+
+                span {
+                    color: var(--color-black);
+                    opacity: .6;
+                    text-decoration: line-through;
+                }
+            }
+        }
+
+        &-attributes {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+
+            .attributes__frame {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                row-gap: 32px;
+
+                .attributes__item {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    padding: 0 24px 32px;
+                    border-bottom: 1px solid #1E1E1E1A;
+
+                    span {
+                        opacity: .6;
+                    }
+                }
+            }
+
+            .attributes__description {
+                padding: 0 24px;
+                opacity: .6;
+            }
+        }
+
+        &-action {
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            .button {
+                flex: 1;
+                justify-content: center;
+            }
+
+            .action__favorite {
+                height: 100%;
+                aspect-ratio: 1/1;
+                background: #E8E6D5;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.5s ease;
+
+                &:hover {
+                    svg {
+                        fill: var(--color-accent);
+                    }
+                }
+
+                svg {
+                    height: 32px;
+                    width: auto;
+                    transition: all 0.5s ease;
+                    fill: var(--color-black);
+                    color: transparent;
+
+                    path {
+                        transition: all 0.5s ease;
+                    }
+                }
+            }
+        }
+        &-conditions{
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            .conditions__item{
+                padding: 0 24px 24px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-bottom: 1px solid #1E1E1E1A;
+                span{
+                    opacity: .6;
+                }
+            }
+        }
+    }
+}

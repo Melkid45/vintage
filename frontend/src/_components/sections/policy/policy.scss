@@ -1,0 +1,102 @@
+.policy{
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    .block__title{
+        p{
+            color: #1E1E1E99;
+        }
+    }
+    &__body{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        position: relative;
+        .policy__navigation{
+            display: flex;
+            flex-direction: column;
+            position: sticky;
+            top: 108px;
+            left: 0;
+            max-height: max-content;
+            &-item{
+                padding: 32px;
+                border-bottom: 1px solid #1E1E1E1A;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+                transition: all 0.5s ease;
+                &.current, &:hover{
+                    background: var(--color-black);
+                    border-color: transparent;
+                    h3{
+                        color: var(--color-white);
+                    }
+                    svg{
+                        color: var(--color-white);
+                        rotate: -90deg;
+                    }
+                }
+                h3{
+                    display: flex;
+                    align-items: center;
+                    gap: 24px;
+                    transition: all 0.5s ease;
+                    span{
+                        color: var(--color-accent);
+                    }
+                }
+                svg{
+                    transition: all 0.5s ease;
+                }
+            }
+        }
+        .policy__frame{
+            position: relative;
+            grid-column: span 2;
+            .policy__item{
+                padding: 64px;
+                border: 1px solid var(--color-black);
+                display: none;
+                flex-direction: column;
+                gap: 48px;
+                &.current{
+                    display: flex;
+                    animation: policy-item-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+                }
+                &-text{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 18px;
+                    h3:not(:first-child) {
+                        margin-top: 14px;
+                    }
+                    p{
+                        opacity: .6;
+                        font-weight: 400;
+                        line-height: 1.3;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes policy-item-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .policy__item.current {
+        animation: none;
+    }
+}

@@ -1,0 +1,68 @@
+.header {
+  width: 100%;
+  padding: 32px 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  border-bottom: 1px solid #1E1E1E33;
+  background: var(--color-white);
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header__logo {
+      height: 26px;
+      width: auto;
+
+      img {
+        height: 26px;
+        width: auto;
+      }
+    }
+
+    .header__navigation {
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 64px;
+
+        li {
+          text-transform: uppercase;
+          opacity: .6;
+          transition: all 0.5s ease;
+
+          &:hover {
+            opacity: 1;
+          }
+
+          &.current {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .header__action {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      &-profile {
+        padding: 12px 24px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        svg {
+          height: 18px;
+          width: auto;
+        }
+      }
+      .header__action-cart-count{
+        color: var(--color-accent);
+      }
+    }
+  }
+}

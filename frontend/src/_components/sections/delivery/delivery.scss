@@ -1,0 +1,36 @@
+.delivery{
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    &__body{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        .delivery__item{
+            padding: 32px;
+            border: 1px solid var(--color-black);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 24px;
+            img{
+                max-height: 54px;
+                width: 100%;
+                max-width: max-content;
+                height: 100%;
+                object-position: left;
+            }
+            &-name{
+                text-transform: uppercase;
+            }
+            &-text{
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                p{
+                    opacity: .6;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,263 @@
+.block--hero {
+  position: relative;
+  height: 100svh;
+  min-height: 680px;
+  overflow: hidden;
+  padding-bottom: 0;
+  > .hero__image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  > .container {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+  }
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &__title {
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    z-index: 0;
+    width: 100%;
+    transform: translateX(-50%);
+    pointer-events: none;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__splide,
+  .splide__track,
+  .splide__list,
+  .splide__slide {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__splide {
+    position: relative;
+    z-index: 2;
+
+    > .splide__track {
+      position: relative;
+      z-index: 2;
+    }
+
+  }
+  .splide__arrows{
+    position: static;
+    .splide__arrow{
+      position: absolute;
+      &--next{
+        bottom: 64px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        color: #1E1E1E99;
+        z-index: 3;
+        .icon{
+          width: 64px;
+          height: auto;
+          aspect-ratio: 1/1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid var(--color-black);
+          svg{
+            height: 22px;
+            width: auto;
+            color: var(--color-black);
+          }
+        }
+      }
+      &--prev{
+        display: none;
+      }
+    }
+  }
+
+  &__splide.is-moving .splide__arrows .splide__arrow--next {
+    z-index: 1;
+  }
+
+  &__slide {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__product {
+    position: absolute;
+    top: 48%;
+    z-index: 2;
+    left: 50%;
+    width: min(54vw, 760px);
+    height: min(72vh, 730px);
+    object-fit: contain;
+    transform: translate(-50%, -50%) scale(0.97);
+    filter: drop-shadow(0 24px 28px rgba(30, 30, 30, 0.08));
+    transition: transform 1.2s cubic-bezier(0.2, 0.75, 0.25, 1);
+  }
+
+  &__splide-text,
+  &__slide > .button {
+    position: absolute;
+    bottom: 52px;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.55s ease,
+      transform 0.75s cubic-bezier(0.2, 0.75, 0.25, 1);
+      svg{
+        transition: all 0.5s ease;
+      }
+  }
+
+  &__splide-text {
+    left: 0;
+    display: flex;
+    max-width: 360px;
+    flex-direction: column;
+    gap: 14px;
+
+    > span {
+      opacity: 0.56;
+    }
+
+    h3 {
+      text-transform: uppercase;
+    }
+  }
+
+  &__slide > .button {
+    right: 0;
+    min-height: 60px;
+    gap: 24px;
+    text-transform: uppercase;
+
+    svg {
+      transition: 0.35s ease;
+    }
+  }
+
+  &__splide.is-ready .splide__slide.is-active {
+    .hero__product {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .hero__splide-text,
+    > .button {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    > .button {
+      transition-delay: 0.1s;
+    }
+  }
+
+  &__splide.is-ready.is-moving .splide__slide.is-active {
+    .hero__splide-text,
+    > .button {
+      opacity: 0;
+      transform: translateY(-28px);
+      transition-delay: 0s;
+    }
+  }
+
+  &__splide.is-ready.is-moving {
+    .hero__splide-text,
+    .hero__slide > .button {
+      transition-duration: 0.2s, 0.35s;
+      transition-timing-function: ease-out, cubic-bezier(0.2, 0.75, 0.25, 1);
+      svg{
+        transition: all 0.5s ease;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .block--hero {
+    min-height: 620px;
+  }
+
+  .hero {
+    &__product {
+      width: min(70vw, 650px);
+      height: min(64vh, 620px);
+    }
+
+    &__splide-text,
+    &__slide > .button {
+      bottom: 36px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .block--hero {
+    height: 760px;
+    min-height: 100svh;
+  }
+
+  .hero {
+    &__title {
+      top: 28px;
+      width: 150%;
+    }
+
+    &__product {
+      top: 45%;
+      width: 92vw;
+      height: 48%;
+    }
+
+    &__splide-text {
+      right: 0;
+      bottom: 92px;
+      gap: 9px;
+
+      h3 {
+        font-size: 24px;
+      }
+    }
+
+    &__slide > .button {
+      right: auto;
+      bottom: 24px;
+      left: 0;
+      min-height: 50px;
+      font-size: 16px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__product,
+  .hero__splide-text,
+  .hero__slide > .button,
+  .hero__slide > .button svg {
+    transition: none;
+  }
+}
