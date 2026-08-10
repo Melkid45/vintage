@@ -1,0 +1,32 @@
+.block--404{
+    padding-top: 200px;
+}
+
+.not-found{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 160px;
+    &-text{
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        h1{
+            font-size: 273px;
+            line-height: 1;
+        }
+        p{
+            opacity: .6;
+        }
+    }
+    a{
+        max-width: max-content;
+    }
+    img{
+        position: absolute;
+        right: 62px;
+        bottom: -100px;
+        width: 952px;
+        height: 832px;
+    }
+}

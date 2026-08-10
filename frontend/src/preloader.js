@@ -4,8 +4,26 @@ import { MotionPathPlugin } from 'gsap/MotionPathPlugin'
 gsap.registerPlugin(MotionPathPlugin)
 
 const PRELOADER_STORAGE_KEY = 'vintage-preloader-played'
+const PRELOADER_FONT = '800 184px Inter'
+const FONT_LOAD_TIMEOUT = 2000
 
-export function initPreloader(lenis) {
+function nextFrame() {
+  return new Promise((resolve) => requestAnimationFrame(resolve))
+}
+
+async function waitForPreloaderFont() {
+  if (!document.fonts?.load) {
+    return
+  }
+
+  await Promise.race([
+    document.fonts.load(PRELOADER_FONT, 'ВИНТАЖ527').catch(() => []),
+    new Promise((resolve) => setTimeout(resolve, FONT_LOAD_TIMEOUT)),
+  ])
+  await nextFrame()
+}
+
+export async function initPreloader(lenis) {
   const preloader = document.querySelector('[data-preloader]')
 
   if (!preloader) {
@@ -58,6 +76,8 @@ export function initPreloader(lenis) {
 
   gsap.set(preloader, { clipPath: 'inset(0% 0% 0% 0%)' })
   gsap.set(words, { autoAlpha: 0, y: 56 })
+  await waitForPreloaderFont()
+
   const viewport = {
     width: window.innerWidth,
     height: window.innerHeight,

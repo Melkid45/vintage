@@ -1,0 +1,17 @@
+.order{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding-bottom: 423px;
+    a{
+        max-width: max-content;
+    }
+    img{
+        position: absolute;
+        bottom: -19px;
+        right: 100px;
+        width: 1462px;
+        height: 774px;
+    }
+}

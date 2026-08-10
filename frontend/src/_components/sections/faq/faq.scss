@@ -45,7 +45,7 @@
             &-bot{
                 overflow: hidden;
                 max-height: 0;
-                transition: all 0.5s ease;
+                transition: max-height 0.5s ease;
                 p{
                     padding-top: 24px;
                     max-width: 800px;

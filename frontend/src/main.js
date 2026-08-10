@@ -71,8 +71,18 @@ if (heroElement) {
 }
 
 
-let faqItems = document.querySelectorAll('.faq__item')
+const faqItems = document.querySelectorAll('.faq__item')
+const faqPanels = document.querySelectorAll('.faq__item-bot')
 
+faqPanels.forEach((panel) => {
+  panel.addEventListener('transitionend', (event) => {
+    if (event.propertyName !== 'max-height') {
+      return
+    }
+
+    requestAnimationFrame(() => lenis.resize())
+  })
+})
 
 faqItems.forEach(el => {
   el.addEventListener('click', function () {

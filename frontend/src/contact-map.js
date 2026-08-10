@@ -72,7 +72,7 @@ export async function initContactsMap() {
     title: item.dataset.mapTitle,
   }))
   const placemarks = []
-  let activeIndex = 0
+  let activeIndex = -1
   let map = null
 
   setupAdaptiveActions(items)
@@ -142,7 +142,6 @@ export async function initContactsMap() {
       map.geoObjects.add(placemark)
     })
 
-    activateLocation(activeIndex, false)
     statusElement?.setAttribute('hidden', '')
   } catch (error) {
     if (statusElement) {

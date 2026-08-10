@@ -12,6 +12,13 @@
             padding-bottom: 32px;
             border-bottom: 1px solid #1E1E1E1A;
             width: 100%;
+            &:hover{
+                .format__item-title{
+                    h3{
+                        color: var(--color-accent);
+                    }
+                }
+            }
             &-title{
                 display: flex;
                 align-items: center;
@@ -19,6 +26,9 @@
                 grid-column: span 2;
                 span{
                     color: var(--color-accent);
+                }
+                h3{
+                    transition: all 0.5s ease;
                 }
             }
             p{
